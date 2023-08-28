@@ -1,32 +1,57 @@
 # SquatterSpotter
 
-Welcome to **SquatterSpotter**! This tool helps you identify potential typosquatting domain variations of your main domain and fetches their DNS records.
+This tool identifies potential typosquatting variations of a specified domain using OpenAI's GPT-3.5. It then checks these variations for associated DNS records like A, MX, and NS, and further inspects if the IPs associated with the domains are malicious using AbuseIPDB.
 
-## What It Does
+## Features
 
-**SquatterSpotter** checks for domain names that are similar to the one you provide, which could be impersonating or riding off the familiarity of your domain. For each identified domain variation, the tool also retrieves and displays its DNS records.
+- **Domain Variation Generator**: Uses GPT to generate possible typosquatting domains.
+- **DNS Records Checker**: Fetches DNS records (A, MX, NS) for the generated domain variations.
+- **Malicious IP Detector**: Verifies if the IPs associated with the domain variations are malicious.
 
-## Setup
+## Prerequisites
 
-1. Ensure you have Python installed on your machine.
-2. Install the necessary Python packages by running:
+- Python 3.x
+- An `.env` file in the root directory with the following keys:
+  ```
+  OPENAI_API_KEY=<Your OpenAI API Key>
+  ABUSEIPDB_API_KEY=<Your AbuseIPDB API Key>
+  ```
+
+## Setup and Installation
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/psykrat/squatterspotter
+   cd <repository-dir>
    ```
-   pip install requests dnspython
-   ```
 
-3. You'll also need an API key from OpenAI for the domain name generation functionality. Make sure to replace the placeholder in the script with your actual API key.
+2. **Install Dependencies**:
+   ```bash
+   pip install requests dnspython python-dotenv
+   ```
 
 ## Usage
 
-1. Navigate to the directory where you've saved `squatterspotter.py`.
-2. Open a terminal or command prompt in that directory.
-3. Run the script with:
+1. **Run the Script**:
+   ```bash
+   python squatterspotter_v2.py
    ```
-   python squatterspotter.py
-   ```
+   
+2. **Input Domain**: Provide the domain name you want to check.
 
-4. Follow the on-screen prompts to input your domain and other preferences, and the tool will display potential typosquatting domains and their DNS records.
+3. **Optional Custom Prompt**: Choose if you'd like to use a custom prompt for domain generation.
+
+4. **View Results**: After the script finishes processing, a report will automatically open in your default web browser, presenting the details of the domain variations.
+
+
+## Contributing
+
+Feel free to fork, open issues, or submit pull requests. Any contribution is welcome!
 
 ## License
 
-This tool is open-source and free to use. If sharing or re-purposing, kindly give appropriate credit. Please note that while this tool aims to identify potential typosquatting domains, it might not catch all of them.
+This tool is open-source and is available under the MIT License.
+
+## Author
+
+Created by `psykrat`
