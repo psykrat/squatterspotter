@@ -8,6 +8,10 @@ This tool identifies potential typosquatting variations of a specified domain us
 - **DNS Records Checker**: Fetches DNS records (A, MX, NS) for the generated domain variations.
 - **Malicious IP Detector**: Verifies if the IPs associated with the domain variations are malicious.
 
+(example of first 3 resulta for example.com)
+<img width="996" alt="Screenshot 2023-08-29 at 9 43 42 AM" src="https://github.com/psykrat/squatterspotter/assets/129807238/dc8dd04f-8340-40ad-bb99-51a3a84aa06d">
+
+
 ## Prerequisites
 
 - Python 3.x
